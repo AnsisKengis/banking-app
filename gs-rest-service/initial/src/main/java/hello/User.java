@@ -1,16 +1,12 @@
-package hello.validation;
+package hello;
 
-
-import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class PersonForm {
+public class User {
 
-    @Email
     @NotNull
-    @Size(min=2, max=30)
     private String email;
 
     @NotNull
@@ -18,7 +14,7 @@ public class PersonForm {
     private String password;
 
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     public void setEmail(String email) {
@@ -33,7 +29,8 @@ public class PersonForm {
         this.password = password;
     }
 
+    @Override
     public String toString() {
-        return "Person(Email: " + this.email + ", password: " + this.password + ")";
+        return email;
     }
 }

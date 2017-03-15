@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>This is your bank account</h1>
+<p th:text="'Hello, ' + ${user.email}" />
+<p th:text="'Your password is ' + ${user.password}" />
+<!--<p th:text="'Your cash balance is ' + ${deposit.balance}" />-->
+<button>
+    <a href="/deposit">Deposit money</a>
+</button>
+
+</body>
+</html>
