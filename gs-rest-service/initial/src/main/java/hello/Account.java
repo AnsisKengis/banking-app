@@ -22,24 +22,24 @@ public class Account {
     }
 
     public synchronized void withdraw(int bal) {
-        try {
-
-            if (balance >= bal) {
-                System.out.println(user.getEmail() + " " + "is try to withdraw");
-                try {
-                    Thread.sleep(100);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                balance = balance - bal;
-                System.out.println(user.getEmail() + " " + "is complete the withdraw");
-            } else {
-                System.out.println(user.getEmail() + " " + "doesn't have enough money for withdraw ");
-            }
-            System.out.println(user.getEmail() + " " + " withdraw Rs." + balance);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//
+//            if (balance >= bal) {
+//                System.out.println(user.getEmail() + " " + "is try to withdraw");
+//                try {
+//                    Thread.sleep(100);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                balance = balance - bal;
+//                System.out.println(user.getEmail() + " " + "is complete the withdraw");
+//            } else {
+//                System.out.println(user.getEmail() + " " + "doesn't have enough money for withdraw ");
+//            }
+//            System.out.println(user.getEmail() + " " + " withdraw Rs." + balance);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
     public synchronized void deposit(int bal) {
         try {

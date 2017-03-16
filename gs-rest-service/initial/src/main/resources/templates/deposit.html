@@ -6,10 +6,13 @@
 </head>
 <body>
 <h1>TRYING DEPOSIT</h1>
-<!--<p th:text="'Your cash balance is ' + ${deposit.bal}" />-->
-<form th:action="@{/deposit}" method="get">
-    <!--<p th:text="'Your cash balance is ' + ${deposit.bal}" />-->
-    <!--<input th:type="submit" th:name="Kautkas" th:value="kkkkk">-->
+
+<form action="#" th:action="@{/deposit}" th:object="${user}" method="post">
+    <!--<p>Enter balance you wish: <input type="number" th:field="*{balance}" /></p>-->
+    <!--<p th:text="'Your current balance is: ' + *{email}" />-->
+    <!--<p>Your currnet balance is: <input type="email" th:field="*{email}" /></p>-->
+    <!--<p>Your currnet balance is: <input type="number" th:field="*{balance}" /></p>-->
+
 </form>
 
 </body>

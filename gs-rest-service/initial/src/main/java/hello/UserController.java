@@ -17,22 +17,22 @@ public class UserController extends WebMvcConfigurerAdapter{
     @GetMapping("/login")
     public String userForm(Model model) {
         model.addAttribute("user", new User());
-        return "user";
+        return "login";
     }
 
     @PostMapping("/user")
-    public String UserSubmit(@ModelAttribute User user, @ModelAttribute Account account) {
-        return "result";
+    public String UserSubmit(@ModelAttribute User user) {
+        return "user";
     }
 
     @GetMapping("/deposit")
-    public String money(Model model) {
-        model.addAttribute("deposit", new User());
+    public String depositMoney(Model model) {
+        model.addAttribute("user", new User());
         return "deposit";
     }
     @PostMapping("/deposit")
-    public String depositMoney(@ModelAttribute Account account) {
-        return "user";
+    public String depositMoneyResult(@ModelAttribute User user) {
+        return "deposit";
     }
 
 
