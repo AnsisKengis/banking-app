@@ -3,16 +3,13 @@ package hello;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Scanner;
 
 public class User {
-    private double balance;
+    private int balance;
     private static User user;
     public User() {
         balance = 0;
-    }
-    public User(double initialBalance)
-    {
-        balance = initialBalance;
     }
 
     @NotNull
@@ -42,38 +39,10 @@ public class User {
         this.password = password;
     }
 
-
-
-    public synchronized void deposit(double amount) {
-                balance = balance + amount;
-    }
-
-    public synchronized void withdraw(double amount) {
-//        try {
-//
-//            if (balance >= amount) {
-//                System.out.println(user.getEmail() + " " + "is try to withdraw");
-//                try {
-//                    Thread.sleep(100);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-                balance = balance - amount;
-//                System.out.println(user.getEmail() + " " + "is complete the withdraw");
-//            } else {
-//                System.out.println(user.getEmail() + " " + "doesn't have enough money for withdraw ");
-//            }
-//            System.out.println(user.getEmail() + " " + " withdraw Rs." + balance);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-    }
-
-
-    public void newBalance(double balance) {
+    public void newBalance(int balance) {
         this.balance = balance;
     }
-    public double getBalance()
+    public int getBalance()
     {
         return balance;
     }
@@ -81,6 +50,40 @@ public class User {
         this.balance = balance;
     }
 
+    public synchronized void deposit(int amount) {
+        balance = balance + amount;
+    }
+
+    public synchronized void withdraw(int amount) {
+        try{
+            if (balance >= amount) {
+                balance = balance - amount;
+                System.out.println(getEmail() + " just withdraw " + amount);
+            }
+            else {
+                System.out.println("Unfortunately, " + getEmail() + ", you don't have enough money ");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void end() {
+        System.exit(0);
+    }
+
+    public void login(String email, String password) {
+        try {
+            if (email == getEmail() && password == getPassword()) {
+                System.out.println("Hello" + getEmail() + ", you have successfully logged in");
+
+            }
+            else System.out.println("This works , " + getEmail() + ", you cant login");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public String toString() {
