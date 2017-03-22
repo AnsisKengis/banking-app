@@ -3,6 +3,7 @@ package hello;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -36,6 +37,7 @@ public class Application {
                 System.out.println("Your password is: " + newUser.getPassword());
                 System.out.println("You have successfully registered");
                 System.out.println("Your current balance is: " + newUser.getBalance());
+                System.out.println("Current users: " + users);
 
 
                 Scanner depositWithdrawReader = new Scanner(System.in);
